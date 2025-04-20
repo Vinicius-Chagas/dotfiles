@@ -108,17 +108,42 @@ echo "" # Add a newline
 
 # --- Stow setup ---
 echo "Initializing stow..."
+# Ensure we are in the dotfiles directory before running stow
+if [ ! -d "$DOTFILES_DIR" ] || [ "$(pwd)" != "$DOTFILES_DIR" ]; then
+    echo "Error: Not in the dotfiles directory '$DOTFILES_DIR'. Cannot run stow."
+    exit 1
+fi
+
 # This assumes stow is installed (it should be if it was in packages_repo.txt
 # or a dependency, but add a check for robustness)
 if ! command -v stow &> /dev/null; then
     echo "Warning: stow command not found. Please install stow manually if needed (e.g., sudo pacman -S stow)."
     echo "Skipping stow setup."
 else
-    # Assuming the script is currently in the DOTFILES_DIR
-    # Use -t $HOME to explicitly set the target directory
-    stow -t "$HOME" . || { echo "Error: Stow failed."; }
+    # Define the list of dotfiles directories to symlink (these are the 'packages' for stow)
+    # !! IMPORTANT !! Update this list if you add new dotfiles directories in your repo
+    STOW_PACKAGES=".config bash" # <--- **Customize this list with your actual package directory names**
+
+    echo "Running stow for packages: $STOW_PACKAGES"
+    # Run stow from the dotfiles directory ($DOTFILES_DIR), targeting the home directory ($HOME)
+    # --adopt handles existing files by moving them into the repo first before linking
+    # --verbose shows more output
+    stow -v -t "$HOME" --adopt $STOW_PACKAGES || { echo "Warning: Stow failed. Check output for conflicts."; } # Allow failure but report
     echo "Stow initialization finished. Please check output for conflicts (e.g., files already exist)."
 fi
+
+echo "" # Add a newline
+
+# --- Change remote origin to SSH ---
+echo "Changing remote origin to ssh..."
+# Ensure we are in the dotfiles directory to modify the git remote
+if [ ! -d "$DOTFILES_DIR" ] || [ "$(pwd)" != "$DOTFILES_DIR" ]; then
+    echo "Error: Not in the dotfiles directory '$DOTFILES_DIR'. Cannot change git remote."
+    # This might be a fatal error depending on desired strictness
+    exit 1
+fi
+git remote set-url origin "$SSH_REPO_URL" || { echo "Warning: Failed to change remote origin URL."; } # Allow failure but report
+echo "Remote origin changed to $SSH_REPO_URL."
 
 echo "" # Add a newline
 
