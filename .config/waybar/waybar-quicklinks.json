@@ -1,0 +1,57 @@
+{
+    "custom/quicklink_filemanager": {
+        "format": "{icon}",
+        "on-click": "thunar",
+        "tooltip-format": "Filemanager",
+        "format-icons": [" "]
+    },
+    "custom/quicklink_chromium": {
+        "format": "{icon}",
+        "on-click": "vivaldi",
+        "tooltip-format": "Vivaldi",
+        "format-icons": [" "]
+    },
+    "custom/quicklink_calculator": {
+        "format": "{icon}",
+        "on-click": "gnome-calculator",
+        "tooltip-format": "Calculadora",
+        "format-icons": [" "]
+    },
+    "custom/discord": {
+        "format": "{icon}",
+        "font-size": "50px",
+        "on-click": "discord",
+        "tooltip-format": "Discord",
+        "format-icons": [" "]
+    },
+    "custom/steam": {
+        "format": "{icon}",
+        "on-click": "steam",
+        "tooltip-format": "Steam",
+         "format-icons": [" "]
+    },
+/*
+Don't remove the quicklinkempty
+*/
+    "custom/quicklinkempty": {
+    },
+/*
+Add your quicklinks in your desired order to the status bar
+*/
+    "group/quicklinks": {
+        "orientation": "horizontal",
+        "modules": [
+
+            "custom/quicklink_filemanager",
+            "custom/quicklink_chromium",
+            "custom/quicklink_calculator",
+            "custom/discord",
+            "custom/steam",
+
+/*
+Don't remove the quicklinkempty
+*/
+            "custom/quicklinkempty"
+        ]
+    }
+}

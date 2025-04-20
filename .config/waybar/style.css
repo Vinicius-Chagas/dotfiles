@@ -1,0 +1,10 @@
+@import "./style/[Dark] Half-Moon.css";
+
+#quicklinks {
+	font-family: "Font Awesome";
+	font-size: 18px;
+}
+
+window#waybar.hidded {
+    opacity: 0.2;
+}

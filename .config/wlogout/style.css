@@ -1,0 +1,55 @@
+window {
+    font-family: Font Awesome;
+    font-size: 16pt;
+    color: #fff; /* text */
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 20%;
+    background-color: #1D3867;
+    border-radius: 25px;
+    margin: 5px;
+    color: #FFFFFF;
+    border: 1px solid;
+    border-color: #000;
+    outline: none;
+}
+
+button:focus {
+    background-size: 25%;
+}
+
+button:hover { 
+    background-size: 40%;
+}
+
+/* Adjust the size of the icon or content inside the button */
+/* button span {
+    font-size: 1.2em; Increase the font size 
+} */
+
+#lock {
+    background-image: image(url("./icons/lock.png"));
+}
+#logout {
+    background-image: image(url("./icons/logout.png"));
+}
+
+#suspend {
+    background-image: image(url("./icons/sleep.png"));
+}
+
+#shutdown {
+    background-image: image(url("./icons/power.png"));
+}
+
+#reboot {
+    background-image: image(url("./icons/restart.png"));
+}
+
+#hibernate {
+    background-image: image(url("./icons/hibernate.png"));
+}

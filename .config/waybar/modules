@@ -1,0 +1,366 @@
+//  __  __           _       _            
+// |  \/  | ___   __| |_   _| | ___  ___  
+// | |\/| |/ _ \ / _` | | | | |/ _ \/ __| 
+// | |  | | (_) | (_| | |_| | |  __/\__ \ 
+// |_|  |_|\___/ \__,_|\__,_|_|\___||___/ 
+//                                        
+//  
+// by Vinicius C (2024) 
+// ----------------------------------------------------- 
+//
+
+{ 
+    // CIRCLES Style 
+    "hyprland/workspaces": {
+	"active-only": false,
+        "all-outputs": true, 
+	    "format": "{icon}",
+	    "show-special": false,
+	    "on-click": "activate",
+	    "on-scroll-up": "hyprctl dispatch workspace e+1",
+	    "on-scroll-down": "hyprctl dispatch workspace e-1",
+	    "persistent-workspaces": {
+	      "1": [],
+	      "2": [],
+	      "3": [],
+	      "4": [],
+	      "5": [],
+	    },
+	    "format-icons": {
+	      "active": "",
+	      "default": ""
+		}
+    },
+	// ROMAN Numerals style
+	"hyprland/workspaces#roman": {
+	    "active-only":false,
+	    "all-outputs": true,
+	    "format": "{icon}",
+	    "show-special": false,
+	    "on-click": "activate",
+	    "on-scroll-up": "hyprctl dispatch workspace e+1",
+	    "on-scroll-down": "hyprctl dispatch workspace e-1",
+	    "persistent-workspaces":{
+	        "1": [],
+	        "2": [],
+	        "3": [],
+	        "4": [],
+	        "5": []
+	    },
+	    "format-icons": {
+	      "1": "I",
+	      "2": "II",
+	      "3": "III",
+	      "4": "IV",
+	      "5": "V",
+	      "6": "VI",
+	      "7": "VII",
+	      "8": "VIII",
+	      "9": "IX",
+	      "10": "X"
+	      
+	    }
+	},
+
+	// PACMAN Style
+	  "hyprland/workspaces#pacman": {
+	    "active-only":false,
+	    "all-outputs": true,
+	    "format": "{icon}",
+	    "on-click": "activate",
+	    "on-scroll-up": "hyprctl dispatch workspace e+1",
+	    "on-scroll-down": "hyprctl dispatch workspace e-1",
+	    "show-special": false,
+	    "persistent-workspaces":{
+	        "1": [],
+	        "2": [],
+	        "3": [],
+	        "4": [],
+	        "5": [],
+	    },
+	    "format-icons": {
+	      "active": " 󰮯 ",
+	      "default": "󰊠",
+	      "persistent":"󰊠"
+	    }
+	},
+	  
+	"hyprland/workspaces#kanji": {
+	    "disable-scroll": true,
+	    "all-outputs": true,
+	    "format": "{icon}",
+	    "persistent-workspaces": {
+	      "1": [],
+	      "2": [],
+	      "3": [],
+	      "4": [],
+	      "5": [],
+	      },
+	    "format-icons": {
+	      "1": "一",
+	      "2": "二",
+	      "3": "三",
+	      "4": "四",
+	      "5": "五",
+	      "6": "六",
+	      "7": "七",
+	      "8": "八",
+	      "9": "九",
+	      "10": "十",
+	    }
+	},
+	  
+	//  NUMBERS and ICONS style
+	"hyprland/workspaces#4": {
+	    "format": "{name}",
+	    //"format": " {name} {icon} ",
+	    "show-special": false,
+	    "on-click": "activate",
+	    "on-scroll-up": "hyprctl dispatch workspace e+1",
+	    "on-scroll-down": "hyprctl dispatch workspace e-1",
+	    "all-outputs": true,
+	    "sort-by-number": true,
+	    "format-icons": {
+	      "1": " ",
+	      "2": " ",
+	      "3": " ",
+	      "4": " ",
+	      "5": " ",
+	      "6": " ",
+	      "7": "",
+	      "8": " ",
+	      "9": "",
+	      "10": "10",
+	      "focused": "",
+	      "default": "",
+	    },
+	},
+    // Taskbar
+    "wlr/taskbar": {
+        "format": "{icon}",
+        "icon-size": 18,
+        "tooltip-format": "{title}",
+        "on-click": "activate",
+        "on-click-middle": "close",
+        "ignore-list": [
+           "Alacritty"
+        ],
+        
+        "rewrite": {
+            "Vivaldi Web Browser": "Vivaldi",
+            "Foot Server": "Terminal"
+        }
+    },
+    // Updates Count
+    "custom/updater": {
+        "format": "   {}",
+        "escape": true,
+        "return-type": "json",       
+        "exec": "~/.config/scripts/updates.sh",
+        "restart-interval": 60,
+        "on-click": "kitty --class config-floating -e ~/.config/scripts/installupdates.sh",
+        "on-click-right": "~/.config/.settings/software.sh"
+    },
+    // Power Menu
+    "custom/power": {
+        "format": "",
+        "on-click": "wlogout",
+        "tooltip-format": "Power Menu"
+    },
+    // System tray
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    // Clock
+    "clock": {
+        "format": "{:%H:%M %a}",
+        "timezone": "America/Sao_Paulo",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        // START CLOCK FORMAT
+        "format-alt": "{:%Y-%m-%d}",
+        // END CLOCK FORMAT
+	    "calendar": {
+	      "mode"          : "year",
+	      "mode-mon-col"  : 3,
+	      "weeks-pos"     : "right",
+	      "on-scroll"     : 1,
+		"format": {
+		      "months":     "<span color='#ffead3'><b>{}</b></span>",
+		      "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+		      "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+		      "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+		      "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+	       }
+     	 }
+    },
+
+    // System
+    "custom/system": {
+        "format": "",
+        "tooltip": false
+    },
+
+    // CPU
+    "cpu": {
+        "format": "{usage}%  \uf2db",  
+        "interval": 5,
+        "format-alt-click": "click",
+        "format-alt": "{icon0}{icon1}{icon2}{icon3} {usage:>2}% 󰍛",
+        "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
+        "on-click-right": "kitty --class config-floating -e btop"
+    },
+
+    // Memory
+    "memory": {
+		"interval": 5,
+        "format": "{used:0.1f}G  \uf538",
+        "format-alt": "{percentage}%  \uf538",
+        "tooltip": true,
+        "tooltip-format": "{used:0.1f}GB/{total:0.1f}G",
+        "on-click-right": "kitty --class config-floating -e btop",
+ 		"font": "JetBrainsMono Nerd Font 12",    
+	},
+	"disk": {
+        "interval": 30,
+        "format": "{percentage_used}%  \uf0a0",
+        "path": "/home",
+        "on-click-right":  "kitty --class config-floating -e btop",
+   		"tooltip-format": "{used} usados de {total} em {path} ({percentage_used}%)",
+    }, 
+	"temperature": {
+        "interval": 10,
+        "tooltip": true,
+        "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/hwmon/hwmon3/temp1_input"],
+        "critical-threshold": 82,
+        "format-critical": "CPU:  {temperatureC}°C  \uf2c9",
+        "format-warning": "CPU:  {temperatureC}°C  \uf2c7",
+        "format": "CPU:  {temperatureC}°C  \uf2ca",
+        "states" : {
+            "warning": 50,
+            "critical": 75,
+        },
+		"on-click-right":  "kitty --class config-floating -e btop"
+        }, 
+    "temperature#gpu": {
+        "interval": 10,
+        "tooltip": true,
+        "hwmon-path": ["/sys/class/hwmon/hwmon1/temp1_input","/sys/class/hwmon/hwmon2/temp1_input"],
+        "critical-threshold": 82,
+        "format-critical": "GPU:  {temperatureC}°C  \uf2c9",
+        "format-warning": "GPU:  {temperatureC}°C  \uf2c7",
+        "format": "GPU:  {temperatureC}°C  \uf2ca",
+        "states" : {
+            "warning": 50,
+            "critical": 75,
+        },
+        "on-click-right":  "kitty --class config-floating -e btop"
+    },
+    "hyprland/language": {
+        "format": "/ K {short}"
+    },
+    "hyprland/window": {
+	    "format": "{}",
+	    "max-length": 40,
+	    "separate-outputs": true,
+	    "offscreen-css" : true,
+	    "offscreen-css-text": "(inactive)",
+	     "rewrite": {
+	          "(.*) — Mozilla Firefox": " $1",
+	          "(.*) - fish": "> [$1]",
+	      "(.*) - zsh": "> [$1]",
+	      "(.*) - kitty": "> [$1]",
+	    },
+	},
+    //Group Hardware
+    "group/motherboard": {
+        "orientation": "horizontal",        
+        "modules": [
+            "custom/system",
+            "disk",
+            "cpu",
+            "memory",
+            "temperature",
+	    	"temperature#gpu"
+        ]
+    },
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "   {signalStrength}%",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "Disconnected",
+        "tooltip-format": " {ifname} via {gwaddri}",
+        "tooltip-format-wifi": "  {ifname} @ {essid}\nIP: {ipaddr}\nStrength: {signalStrength}%\nFreq: {frequency}MHz\nUp: {bandwidthUpBits} Down: {bandwidthDownBits}",
+        "tooltip-format-ethernet": " {ifname}\nIP: {ipaddr}\n up: {bandwidthUpBits} down: {bandwidthDownBits}",
+        "tooltip-format-disconnected": "Disconnected",
+        "max-length": 50,
+        "on-click": "kitty --class config-floating -e nmtui",
+        "on-click-right": "~/.config/.settings/networkmanager.sh"
+    },
+
+    // Pulseaudio
+    "pulseaudio": {
+        // "scroll-step": 1, // %, can be a float
+        "format": "{icon}   {volume}%",
+        "format-bluetooth": "{volume}%  {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": " ",
+            "hands-free": " ",
+            "headset": " ",
+            "phone": " ",
+            "portable": " ",
+            "car": " ",
+            "default": [" ", " ", " "]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // Other
+    "user": {
+        "format": "{user}",
+        "interval": 60,
+        "icon": false
+    },
+
+	// Separators
+	"custom/separator#dot": {
+	    "format": "",
+	    "interval": "once",
+	    "tooltip": false
+	},
+	  
+	"custom/separator#dot-line": {
+	    "format": "",
+	    "interval": "once",
+	    "tooltip": false
+	},
+	  
+	"custom/separator#line": {
+	    "format": "|",
+	    "interval": "once",
+	    "tooltip": false
+	},
+	  
+	"custom/separator#blank": {
+	    "format": "",
+	    "interval": "once",
+	    "tooltip": false
+	},
+	  
+	"custom/separator#blank_2": {
+		"format": "  ",
+	    "interval": "once",
+	    "tooltip": false
+	},
+
+	"custom/separator#blank_3": {
+		"format": "   ",
+	    "interval": "once",
+	    "tooltip": false
+	},
+}

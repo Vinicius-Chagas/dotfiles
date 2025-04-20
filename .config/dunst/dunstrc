@@ -1,0 +1,33 @@
+[global]
+frame_color = "#89b4fa"
+separator_color= frame
+highlight = "#89b4fa"
+corner_radius = 5
+font = Noto Sans Regular 10, Noto Sans CJK SC Regular 10, Noto Color Emoji 10
+width = (350, 650)
+height = (80, 600)
+origin = "bottom-right"
+gap_size = 5
+format = "<b font_family='Noto Sans'>%a</b>\n<b font_family='Noto Sans'>%s<\b>\n<span font_family='Noto Sans'>%b<\span>\n%p"
+show_indicators=false
+timeout = 5
+
+[urgency_low]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_normal]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+
+[urgency_critical]
+background = "#1e1e2e"
+foreground = "#cdd6f4"
+frame_color = "#fab387"
+timeout = 60
+
+[discord]
+appname = "Discord"
+urgency = normal
+frame_color = "#747da6" 
+timeout = 10

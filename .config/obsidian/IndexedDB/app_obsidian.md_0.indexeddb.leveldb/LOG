@@ -1,0 +1,21 @@
+2025/03/08-14:58:38.170 18fa Reusing MANIFEST /home/vinicius/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/MANIFEST-000001
+2025/03/08-14:58:38.170 18fa Recovering log #7
+2025/03/08-14:58:38.178 18fa Reusing old log /home/vinicius/.config/obsidian/IndexedDB/app_obsidian.md_0.indexeddb.leveldb/000007.log 
+2025/03/08-15:35:53.951 18fb Level-0 table #12: started
+2025/03/08-15:35:53.960 18fb Level-0 table #12: 1797478 bytes OK
+2025/03/08-15:35:53.962 18fb Delete type=0 #7
+2025/03/08-15:37:58.454 18fb Compacting 1@1 + 1@2 files
+2025/03/08-15:37:58.461 18fb Generated table #13@1: 599 keys, 488951 bytes
+2025/03/08-15:37:58.461 18fb Compacted 1@1 + 1@2 files => 488951 bytes
+2025/03/08-15:37:58.462 18fb compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/08-15:37:58.462 18fb Delete type=2 #12
+2025/03/08-15:37:58.462 18fb Delete type=2 #9
+2025/03/08-18:28:38.204 18fb Level-0 table #15: started
+2025/03/08-18:28:38.214 18fb Level-0 table #15: 1792634 bytes OK
+2025/03/08-18:28:38.216 18fb Delete type=0 #11
+2025/03/08-18:29:13.941 18fa Compacting 1@1 + 1@2 files
+2025/03/08-18:29:13.948 18fa Generated table #16@1: 716 keys, 686166 bytes
+2025/03/08-18:29:13.948 18fa Compacted 1@1 + 1@2 files => 686166 bytes
+2025/03/08-18:29:13.950 18fa compacted to: files[ 0 0 1 0 0 0 0 ]
+2025/03/08-18:29:13.950 18fa Delete type=2 #15
+2025/03/08-18:29:13.950 18fa Delete type=2 #13

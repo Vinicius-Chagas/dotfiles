@@ -1,0 +1,15 @@
+[LOG] Welcome to hyprpaper!
+built from commit  ()
+[LOG] Cleaned old hyprpaper preloads (1), removing 8.3MB
+[LOG] Preloaded target /home/vinicius/wallpapers/frierens-staff-3840x2160-20067.jpg in 49.72ms -> Pixel size: [3840, 2160]
+[LOG] Buffer created for target /home/vinicius/wallpapers/frierens-staff-3840x2160-20067.jpg, Shared Memory usage: 8.3MB
+[LOG] Total SM usage for all buffers: 8.3MB
+[LOG] hyprpaper socket started at /run/user/1000/hypr/882f7ad7d2bbfc7440d0ccaef93b1cdd78e8e3ff_1739584369_269855440/.hyprpaper.sock (fd: 4)
+[LOG] configure for HDMI-A-1
+[LOG] configure for HDMI-A-1
+[LOG] Image data for HDMI-A-1: /home/vinicius/wallpapers/frierens-staff-3840x2160-20067.jpg at [-0.00, 0.00], scale: 0.50 (original image size: [3840, 2160])
+[LOG] Rendering splash: Now available on Fedora!
+[LOG] Splash color: 55ffffff
+[LOG] Splash font size: 28, pos: 1580.00, 2094.80
+[LOG] Submitting viewport dest size 1920x1080 for 5776f0ea9730
+[LOG] handlePreferredScale: 1.00 for 5776f0ea9730
