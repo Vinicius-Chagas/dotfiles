@@ -1,0 +1,17 @@
+android-studio
+clamav-unofficial-sigs
+hyprshot
+otf-openmoji
+postman-bin
+sublime-text-4
+tor-browser-bin
+ttf-noto-emoji-monochrome
+ttf-symbola-free
+ttf-twemoji
+ttf-ubraille
+visual-studio-code-bin
+waypaper
+wlogout
+xwaylandvideobridge-git
+youtube-music-bin
+
