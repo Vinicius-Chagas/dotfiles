@@ -31,6 +31,10 @@ export EDGE_PATH="/usr/bin/vivaldi"
 # Export global bin
 export PATH="/usr/bin:$PATH"
 
+#Export local time
+export LC_TIME="pt_BR.UTF-8"
+export LANG="pt_BR.UTF-8"
+
 # --- Path Modifications ---
 # Add specific directories to the PATH environment variable.
 # Order matters: paths earlier in the list are searched first.
