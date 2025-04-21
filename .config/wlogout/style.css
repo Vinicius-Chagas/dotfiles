@@ -1,55 +1,63 @@
+/*
+ * wlogout CSS based on Rofi theme
+ *
+ * Maps Rofi elements to wlogout GTK elements.
+ * Note: wlogout does not have inputbar, prompt, or message elements.
+ */
+
+/*****----- Global Properties (Applied to Window/Buttons) -----*****/
+/* Rofi uses * for defaults, apply to window and buttons */
 window {
-    font-family: Font Awesome;
-    font-size: 16pt;
-    color: #fff; /* text */
-    background-color: rgba(0, 0, 0, 0.7);
+    /* Font: Applied to the main window, typically inherited by buttons */
+    font-family: "JetBrainsMono Nerd Font Mono 12";
+    /* Background: Primary window background */
+    background-color: rgba(17, 17, 27, 0.9); /* #11111b with 90% opacity for transparency */
+    /* Foreground: Default text/icon color */
+    color: #cdd6f4; /* @foreground */
+
+    /* Selected, Active, Urgent are Rofi states. Selected maps best to button:hover */
+    /* @selected: #cba6f7; */
+    /* @active: #f5e0dc; */
+    /* @urgent: #f38ba8; */
 }
 
+/*****----- Main Box / Listview (Rofi 'mainbox', 'listview') -----*****/
+/* wlogout's button container is not a public selector like 'mainbox' or 'listview'.
+   Layout (columns, spacing) is handled by wlogout's internal GTK layout (often GtkGrid or GtkBox).
+   You can apply margins to buttons and padding to the window to achieve spacing effects.
+   If you need full control over grid/flex, you might need to inspect wlogout's GTK structure
+   using tools like `gtk4-inspector` or `gtkinspector` to find the correct container selector.
+   For now, we'll style buttons and use margins/padding for spacing. */
+
+
+/*****----- Elements (Rofi 'element') -----*****/
+/* wlogout buttons correspond to Rofi 'element' */
 button {
+    /* Rofi element styling */
+    padding: 10px;
+    border-radius: 2px;
+    background-color: #313244; /* @element background */
+    color: #cdd6f4; /* @element text-color (@foreground) */
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 20%;
-    background-color: #1D3867;
-    border-radius: 25px;
-    margin: 5px;
-    color: #FFFFFF;
-    border: 1px solid;
-    border-color: #000;
-    outline: none;
+    background-size: 10%;
+
+    /* Rofi element-text font was size 9. Apply to button or use Pango markup per button */
+    font-family: "JetBrainsMono Nerd Font Mono 9"; /* Applying smaller font to button */
+
+    /* Spacing between buttons (Rofi listview spacing was 4px, mainbox spacing 2px) */
+    margin: 3px; /* Combined spacing example */
+
+    /* Optional: Remove default button border */
+    border: none;
 }
 
-button:focus {
-    background-size: 25%;
+/*****----- Selected/Hovered Elements (Rofi 'element selected.normal') -----*****/
+/* Corresponds to standard CSS pseudo-classes for interaction states */
+button:hover, button:focus, button:active {
+    background-color: #cba6f7; /* @selected background */
+    color: #1e1e2e; /* Rofi selected element text color */
+    /* border-color: #cba6f7; */ /* Optional: highlight border on hover */
 }
 
-button:hover { 
-    background-size: 40%;
-}
-
-/* Adjust the size of the icon or content inside the button */
-/* button span {
-    font-size: 1.2em; Increase the font size 
-} */
-
-#lock {
-    background-image: image(url("./icons/lock.png"));
-}
-#logout {
-    background-image: image(url("./icons/logout.png"));
-}
-
-#suspend {
-    background-image: image(url("./icons/sleep.png"));
-}
-
-#shutdown {
-    background-image: image(url("./icons/power.png"));
-}
-
-#reboot {
-    background-image: image(url("./icons/restart.png"));
-}
-
-#hibernate {
-    background-image: image(url("./icons/hibernate.png"));
-}
+/* Rofi inputbar, prompt, message, textbox are not present in wlogout and cannot be styled */

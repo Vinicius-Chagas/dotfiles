@@ -28,6 +28,9 @@ alias grep='grep --color=auto'
 # Example: Set a path for Edge/Vivaldi if needed (Note: Hardcoded path might need review)
 export EDGE_PATH="/usr/bin/vivaldi"
 
+# Export global bin
+export PATH="/usr/bin:$PATH"
+
 # --- Path Modifications ---
 # Add specific directories to the PATH environment variable.
 # Order matters: paths earlier in the list are searched first.
