@@ -122,7 +122,7 @@ if ! command -v stow &> /dev/null; then
 else
     # Define the list of dotfiles directories to symlink (these are the 'packages' for stow)
     # !! IMPORTANT !! Update this list if you add new dotfiles directories in your repo
-    STOW_PACKAGES=".config bash" # <--- **Customize this list with your actual package directory names**
+    STOW_PACKAGES="configs bash" # <--- **Customize this list with your actual package directory names**
 
     echo "Running stow for packages: $STOW_PACKAGES"
     # Run stow from the dotfiles directory ($DOTFILES_DIR), targeting the home directory ($HOME)
