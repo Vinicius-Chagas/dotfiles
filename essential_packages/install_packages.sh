@@ -104,15 +104,20 @@ else
     echo "Warning: '$AUR_PACKAGES_FILE' not found in '$DOTFILES_DIR'. Skipping AUR package installation."
 fi
 
+# --- Install Zed Code Editor ---
 echo "" # Add a newline
-
-# --- Stow setup ---
-echo "Initializing stow..."
-# Ensure we are in the dotfiles directory before running stow
-if [ ! -d "$DOTFILES_DIR" ] || [ "$(pwd)" != "$DOTFILES_DIR" ]; then
-    echo "Error: Not in the dotfiles directory '$DOTFILES_DIR'. Cannot run stow."
-    exit 1
+echo "Checking for Zed code editor..."
+if ! command -v zed &> /dev/null; then
+    echo "Zed not found. Installing from zed.dev..."
+    # This downloads and executes the official installer script.
+    # The -f flag makes curl fail silently on server errors.
+    curl -f https://zed.dev/install.sh | sh || { echo "Error: Failed to install Zed."; exit 1; }
+    echo "Zed installation finished."
+else
+    echo "Zed is already installed."
 fi
+
+echo "" # Add a newline
 
 # --- Stow setup ---
 echo "Initializing stow..."
