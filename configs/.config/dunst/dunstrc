@@ -31,3 +31,11 @@ appname = "Discord"
 urgency = normal
 frame_color = "#747da6" 
 timeout = 10
+
+[clamav]
+appname = "ClamAV"
+urgency = critical
+background = "#fab387"
+foreground = "#1e1e2e"
+frame_color = "#fab387"
+timeout = 0
