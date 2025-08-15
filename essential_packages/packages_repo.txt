@@ -11,7 +11,9 @@ dbeaver
 discord
 dkms
 docker
+docker-compose
 dunst
+gamemode
 gamescope
 git
 gnome-calculator
@@ -20,8 +22,12 @@ hypridle
 hyprland
 hyprlock
 hyprpaper
+hyprshot
 jdk21-openjdk
 kitty
+less
+lib32-gamemode
+lib32-mangohud
 libreoffice-still
 libreoffice-still-br
 linux
@@ -43,6 +49,7 @@ nvm
 obsidian
 openssh
 os-prober
+otf-font-awesome
 pavucontrol
 pipewire
 pipewire-alsa
@@ -53,8 +60,9 @@ pipewire-pulse
 pipewire-session-manager
 postgresql
 pulse-native-provider
+pyenv
+python-pip
 qbittorrent
-redis
 steam
 stow
 sudo
@@ -71,7 +79,9 @@ vivaldi
 vlc
 vulkan-radeon
 waybar
+wine
 wl-clipboard
 xarchiver
 xdg-desktop-portal-hyprland
+yarn
 yazi

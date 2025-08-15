@@ -114,22 +114,42 @@ if [ ! -d "$DOTFILES_DIR" ] || [ "$(pwd)" != "$DOTFILES_DIR" ]; then
     exit 1
 fi
 
-# This assumes stow is installed (it should be if it was in packages_repo.txt
-# or a dependency, but add a check for robustness)
+# --- Stow setup ---
+echo "Initializing stow..."
 if ! command -v stow &> /dev/null; then
-    echo "Warning: stow command not found. Please install stow manually if needed (e.g., sudo pacman -S stow)."
-    echo "Skipping stow setup."
+    echo "Warning: stow not found. Skipping stow setup."
 else
-    # Define the list of dotfiles directories to symlink (these are the 'packages' for stow)
-    # !! IMPORTANT !! Update this list if you add new dotfiles directories in your repo
-    STOW_PACKAGES="configs bash" # <--- **Customize this list with your actual package directory names**
+    # This is the list of packages to be symlinked
+    STOW_PACKAGES="configs bash"
 
-    echo "Running stow for packages: $STOW_PACKAGES"
-    # Run stow from the dotfiles directory ($DOTFILES_DIR), targeting the home directory ($HOME)
-    # --adopt handles existing files by moving them into the repo first before linking
-    # --verbose shows more output
-    stow -v -t "$HOME" --adopt $STOW_PACKAGES || { echo "Warning: Stow failed. Check output for conflicts."; } # Allow failure but report
-    echo "Stow initialization finished. Please check output for conflicts (e.g., files already exist)."
+    echo "Removing any existing default configs that would conflict..."
+
+    # Loop through each package to be stowed
+    for pkg in $STOW_PACKAGES; do
+        # Use a more robust grep and awk to find conflicting files
+        CONFLICTS=$(stow -v --no -t "$HOME" "$pkg" 2>&1 | grep 'over existing target' | awk '{print $8}')
+
+        if [ -n "$CONFLICTS" ]; then
+            for conflict in $CONFLICTS; do
+                # Construct the full path to the conflicting file or directory
+                conflict_path="$HOME/$conflict"
+
+                # Check if it actually exists before trying to remove it
+                if [ -e "$conflict_path" ]; then
+                    echo "Removing conflicting default: $conflict_path"
+                    # Use rm -rf to forcefully remove both files and directories
+                    rm -rf "$conflict_path"
+                fi
+            done
+        fi
+
+        # Now, run the actual stow command. It should succeed without conflicts.
+        # The -R (or --restow) flag ensures everything is linked (or re-linked) correctly.
+        echo "Running stow for package: $pkg"
+        stow -v -R -t "$HOME" "$pkg"
+    done
+
+    echo "Stow initialization finished. Conflicting default files were removed."
 fi
 
 echo "" # Add a newline

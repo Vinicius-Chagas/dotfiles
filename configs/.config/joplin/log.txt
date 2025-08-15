@@ -1,0 +1,125 @@
+2025-01-30 10:39:55: App: Profile directory: /home/vinicius/.config/joplin
+2025-01-30 10:39:55: App: Root profile directory: /home/vinicius/.config/joplin
+2025-01-30 10:39:55: Database was open successfully
+2025-01-30 10:39:55: Checking for database schema update...
+2025-01-30 10:39:55: Current database version <null>
+2025-01-30 10:39:55: Upgrading database from version 0
+2025-01-30 10:39:55: Converting database to version 1
+2025-01-30 10:39:55: Converting database to version 2
+2025-01-30 10:39:55: Converting database to version 3
+2025-01-30 10:39:55: Converting database to version 4
+2025-01-30 10:39:55: Converting database to version 5
+2025-01-30 10:39:55: Converting database to version 6
+2025-01-30 10:39:55: Converting database to version 7
+2025-01-30 10:39:55: Converting database to version 8
+2025-01-30 10:39:55: Converting database to version 9
+2025-01-30 10:39:55: Converting database to version 10
+2025-01-30 10:39:55: Converting database to version 11
+2025-01-30 10:39:55: Converting database to version 12
+2025-01-30 10:39:55: Converting database to version 13
+2025-01-30 10:39:55: Converting database to version 14
+2025-01-30 10:39:55: Converting database to version 15
+2025-01-30 10:39:55: Converting database to version 16
+2025-01-30 10:39:55: Converting database to version 17
+2025-01-30 10:39:55: Converting database to version 18
+2025-01-30 10:39:55: Converting database to version 19
+2025-01-30 10:39:55: Converting database to version 20
+2025-01-30 10:39:55: Converting database to version 21
+2025-01-30 10:39:55: Converting database to version 22
+2025-01-30 10:39:55: Converting database to version 23
+2025-01-30 10:39:55: Converting database to version 24
+2025-01-30 10:39:55: Converting database to version 25
+2025-01-30 10:39:55: Converting database to version 26
+2025-01-30 10:39:55: Converting database to version 27
+2025-01-30 10:39:55: Converting database to version 28
+2025-01-30 10:39:55: Converting database to version 29
+2025-01-30 10:39:55: Converting database to version 30
+2025-01-30 10:39:55: Converting database to version 31
+2025-01-30 10:39:55: Converting database to version 32
+2025-01-30 10:39:55: Converting database to version 33
+2025-01-30 10:39:55: Converting database to version 34
+2025-01-30 10:39:55: Migration failed with fallback and will not be repeated - saving version number
+2025-01-30 10:39:55: Converting database to version 35
+2025-01-30 10:39:55: Converting database to version 36
+2025-01-30 10:39:55: Converting database to version 37
+2025-01-30 10:39:55: Converting database to version 38
+2025-01-30 10:39:55: Converting database to version 39
+2025-01-30 10:39:55: Converting database to version 40
+2025-01-30 10:39:55: Converting database to version 41
+2025-01-30 10:39:55: Converting database to version 42
+2025-01-30 10:39:55: Converting database to version 43
+2025-01-30 10:39:55: Converting database to version 44
+2025-01-30 10:39:55: Converting database to version 45
+2025-01-30 10:39:55: Converting database to version 46
+2025-01-30 10:39:55: Converting database to version 47
+2025-01-30 10:39:55: New version: 47. Previously recorded version: 0
+2025-01-30 10:39:55: Initializing tables...
+2025-01-30 10:39:55: KeychainService: checking if keychain supported
+2025-01-30 10:39:55: KeychainService: could not set test password - keychain support will be disabled
+2025-01-30 10:39:55: e2ee/utils: Master password is not set - trying to get it from the active master key...
+2025-01-30 10:39:55: handleSyncStartupOperation: Processing operation: 0
+2025-01-30 10:39:55: App: Client ID: fbae785c45984b27aa0dda3bc6d40773
+2025-01-30 10:39:55: First start: detected locale as pt_BR
+2025-01-30 10:39:55: models/Setting: Skipping all default migrations...
+2025-01-30 10:39:55: e2ee/utils: Trying to load 0 master keys...
+2025-01-30 10:39:55: e2ee/utils: Loaded master keys: 0
+2025-01-30 10:39:55: ResourceFetcher: Auto-add resources: Mode: always
+2025-01-30 10:39:55: permanentlyDeleteOldData: Processing items older than 7776000000ms...
+2025-01-30 10:39:55: ResourceFetcher: Auto-added resources: 0
+2025-01-30 10:39:55: permanentlyDeleteOldData: Items to permanently delete: {"noteIds":[],"folderIds":[]}
+2025-01-30 10:39:55: checkDisabledSyncItemsNotification: No errors: Hiding notification
+2025-01-30 10:39:55: Running migration: 20
+2025-01-30 10:39:55: DeleteAction: MigrationService: ; Item IDs: 1
+2025-01-30 10:39:55: Running migration: 27
+2025-01-30 10:39:55: DeleteAction: MigrationService: ; Item IDs: 2
+2025-01-30 10:39:55: Running migration: 33
+2025-01-30 10:39:55: SearchEngine: Updating FTS table...
+2025-01-30 10:39:55: Updating items_normalized from {"updated_time":0,"id":""}
+2025-01-30 10:39:55: SearchEngine: Updated FTS table in 1ms. Inserted: 0. Deleted: 0
+2025-01-30 10:39:55: DeleteAction: MigrationService: ; Item IDs: 3
+2025-01-30 10:39:55: Running migration: 35
+2025-01-30 10:39:55: SearchEngine: Updating FTS table...
+2025-01-30 10:39:55: Updating items_normalized from {"updated_time":0,"id":""}
+2025-01-30 10:39:55: SearchEngine: Updated FTS table in 1ms. Inserted: 0. Deleted: 0
+2025-01-30 10:39:55: DeleteAction: MigrationService: ; Item IDs: 4
+2025-01-30 10:39:55: Running migration: 42
+2025-01-30 10:39:55: DeleteAction: MigrationService: ; Item IDs: 5
+2025-01-30 10:39:55: App: "syncInfoCache" was changed - setting up encryption related code
+2025-01-30 10:39:55: e2ee/utils: Trying to load 0 master keys...
+2025-01-30 10:39:55: e2ee/utils: Loaded master keys: 0
+2025-01-30 10:39:55: App: "syncInfoCache" was changed - setting up encryption related code
+2025-01-30 10:39:55: e2ee/utils: Trying to load 0 master keys...
+2025-01-30 10:39:55: e2ee/utils: Loaded master keys: 0
+2025-01-30 10:39:55: App: "syncInfoCache" was changed - setting up encryption related code
+2025-01-30 10:39:55: e2ee/utils: Trying to load 0 master keys...
+2025-01-30 10:39:55: e2ee/utils: Loaded master keys: 0
+2025-01-30 10:39:55: RevisionService: runInBackground: Starting background service with revision collection interval 600000
+2025-01-30 10:39:55: App: FFFFFFFFFFFFF [
+    {
+        "type_": 2,
+        "id": "de1e7ede1e7ede1e7ede1e7ede1e7ede",
+        "parent_id": "",
+        "title": "Lixeira",
+        "updated_time": 1738244395567,
+        "user_updated_time": 1738244395567,
+        "share_id": "",
+        "is_shared": 0,
+        "deleted_time": 0,
+        "note_count": 0
+    }
+]
+2025-01-30 10:39:55: App: PARENT 
+2025-01-30 10:39:55: App: FFF Lixeira 
+2025-01-30 10:39:56: DecryptionWorker: cannot start because no master key is currently loaded.
+2025-01-30 10:39:59: RevisionService: maintenance: Starting...
+2025-01-30 10:39:59: RevisionService: maintenance: Service is enabled
+2025-01-30 10:39:59: RevisionService: collectRevisions: Created revisions for 0 notes
+2025-01-30 10:39:59: RevisionService: maintenance: Done in 102ms
+2025-01-30 10:40:05: SearchEngine: Updating FTS table...
+2025-01-30 10:40:05: Updating items_normalized from {"updated_time":0,"id":""}
+2025-01-30 10:40:05: SearchEngine: Updated FTS table in 1ms. Inserted: 0. Deleted: 0
+2025-01-30 10:40:05: Preparing scheduled sync
+2025-01-30 10:40:05: Sync cancelled - no sync target is selected.
+2025-01-30 10:40:25: ResourceService::indexNoteResources: Start
+2025-01-30 10:40:25: ResourceService::indexNoteResources: Completed
+2025-01-30 10:40:25: ResourceService::deleteOrphanResources: []
