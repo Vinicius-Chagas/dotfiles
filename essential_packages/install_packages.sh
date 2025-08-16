@@ -20,7 +20,7 @@ if [ -f "$REPO_PACKAGES_FILE" ]; then
     # Use --noconfirm to avoid interactive prompts (use with caution!)
     # Add any other pacman flags you might need, like --cachedir or --clean
     # Using xargs is slightly safer than $(cat ...) for very long lists
-    xargs sudo pacman -S --needed --noconfirm < "$REPO_PACKAGES_FILE" || { echo "Error: Failed to install repo packages."; }
+    xargs -a "$REPO_PACKAGES_FILE" sudo pacman -S --needed --noconfirm || { echo "Error: Failed to install repo packages."; }
     echo "Official repository package installation finished."
 else
     echo "Warning: '$REPO_PACKAGES_FILE' not found in '$DOTFILES_DIR'. Skipping official repository package installation."
@@ -70,7 +70,7 @@ if [ -f "$AUR_PACKAGES_FILE" ]; then
     # Use --needed and --noconfirm similar to pacman
     # --sudoloop keeps sudo credentials cached during builds
     # Using xargs for large lists
-    xargs yay -S --needed --noconfirm --sudoloop < "$AUR_PACKAGES_FILE" || { echo "Error: Failed to install AUR packages."; }
+    xargs -a "$AUR_PACKAGES_FILE" yay -S --needed --noconfirm --sudoloop || { echo "Error: Failed to install AUR packages."; }
     echo "AUR package installation finished."
 else
     echo "Warning: '$AUR_PACKAGES_FILE' not found in '$DOTFILES_DIR'. Skipping AUR package installation."
