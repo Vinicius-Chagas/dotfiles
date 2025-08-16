@@ -4,39 +4,11 @@
 set -e
 
 # --- Configuration ---
-DOTFILES_REPO_URL="https://github.com/Vinicius-Chagas/dotfiles.git" # Using HTTPS is generally easier for initial clone
-# DOTFILES_REPO_URL="git@github.com:Vinicius-Chagas/dotfiles.git" # Or use SSH if key is set up
 DOTFILES_DIR="$HOME/dotfiles" # Consistent location for dotfiles
 REPO_PACKAGES_FILE="essential_packages/packages_repo.txt" # Relative to DOTFILES_DIR
 AUR_PACKAGES_FILE="essential_packages/packages_aur.txt"   # Relative to DOTFILES_DIR
 
 echo "Starting dotfiles setup and package installation..."
-
-# --- Installing git ---
-echo "Ensuring git is installed..."
-# Use --needed for idempotency
-sudo pacman -S --needed --noconfirm git || { echo "Error: Failed to install git."; exit 1; }
-echo "Git installation finished."
-
-echo "" # Add a newline
-
-# --- Clone or Update dotfiles ---
-echo "Cloning or updating dotfiles..."
-if [ -d "$DOTFILES_DIR" ]; then
-    echo "Dotfiles directory '$DOTFILES_DIR' already exists. Attempting to update..."
-    cd "$DOTFILES_DIR" || { echo "Error: Could not change directory to $DOTFILES_DIR"; exit 1; }
-    git pull origin main || git pull origin master # Or your main branch name
-    # Add basic check if pull succeeded? git status?
-    echo "Dotfiles update finished."
-else
-    echo "Cloning dotfiles into '$DOTFILES_DIR'..."
-    # Requires git to be installed (usually is on Arch ISO, or install with pacman -S git)
-    git clone "$DOTFILES_REPO_URL" "$DOTFILES_DIR" || { echo "Error: Git clone failed."; exit 1; }
-    cd "$DOTFILES_DIR" || { echo "Error: Could not change directory to $DOTFILES_DIR"; exit 1; }
-    echo "Dotfiles cloned successfully."
-fi
-
-echo "" # Add a newline
 
 # --- Install Official Repository Packages ---
 if [ -f "$REPO_PACKAGES_FILE" ]; then
