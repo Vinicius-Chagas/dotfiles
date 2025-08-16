@@ -14,13 +14,12 @@ echo "Starting dotfiles setup and package installation..."
 if [ -f "$REPO_PACKAGES_FILE" ]; then
     echo "Installing official repository packages from '$REPO_PACKAGES_FILE'..."
     # It's good practice to update system first
-    sudo pacman -Syu --noconfirm || { echo "Error: System update failed."; } # Update system, allow failure but report
+    sudo pacman -Syu || { echo "Error: System update failed."; } # Update system, allow failure but report
 
     # Use --needed to skip packages already installed
-    # Use --noconfirm to avoid interactive prompts (use with caution!)
     # Add any other pacman flags you might need, like --cachedir or --clean
     # Using xargs is slightly safer than $(cat ...) for very long lists
-    xargs -a "$REPO_PACKAGES_FILE" sudo pacman -S --needed --noconfirm || { echo "Error: Failed to install repo packages."; }
+    xargs -a "$REPO_PACKAGES_FILE" sudo pacman -S --needed || { echo "Error: Failed to install repo packages."; }
     echo "Official repository package installation finished."
 else
     echo "Warning: '$REPO_PACKAGES_FILE' not found in '$DOTFILES_DIR'. Skipping official repository package installation."
@@ -30,7 +29,7 @@ echo "" # Add a newline
 
 # --- Ensure base-devel is installed (needed for yay/AUR) ---
 echo "Ensuring base-devel is installed..."
-sudo pacman -S --needed --noconfirm base-devel || { echo "Error: Failed to install base-devel."; }
+sudo pacman -S --needed base-devel || { echo "Error: Failed to install base-devel."; }
 echo "base-devel check finished."
 
 echo "" # Add a newline
@@ -50,7 +49,7 @@ if ! command -v yay &> /dev/null; then
     # Build and install yay
     git clone https://aur.archlinux.org/yay.git "$YAY_TEMP_DIR" || { echo "Error: Git clone for yay failed."; exit 1; }
     cd "$YAY_TEMP_DIR" || { echo "Error: Could not change directory to $YAY_TEMP_DIR."; exit 1; }
-    makepkg -si --noconfirm --skippgpcheck || { echo "Error: makepkg for yay failed."; exit 1; } # Added --skippgpcheck as keys can be an issue on fresh installs
+    makepkg -si --skippgpcheck || { echo "Error: makepkg for yay failed."; exit 1; } # Added --skippgpcheck as keys can be an issue on fresh installs
     cd "$DOTFILES_DIR" || { echo "Error: Could not return to dotfiles directory after yay build."; exit 1; } # Return to dotfiles dir
     rm -rf "$YAY_TEMP_DIR" # Clean up temporary directory
 
@@ -67,10 +66,9 @@ if [ -f "$AUR_PACKAGES_FILE" ]; then
     # Ensure yay is in PATH (sometimes needed in scripts immediately after install)
     export PATH="$PATH:/usr/bin" # yay is usually installed here
 
-    # Use --needed and --noconfirm similar to pacman
     # --sudoloop keeps sudo credentials cached during builds
     # Using xargs for large lists
-    xargs -a "$AUR_PACKAGES_FILE" yay -S --needed --noconfirm --sudoloop || { echo "Error: Failed to install AUR packages."; }
+    xargs -a "$AUR_PACKAGES_FILE" yay -S --needed --sudoloop || { echo "Error: Failed to install AUR packages."; }
     echo "AUR package installation finished."
 else
     echo "Warning: '$AUR_PACKAGES_FILE' not found in '$DOTFILES_DIR'. Skipping AUR package installation."
