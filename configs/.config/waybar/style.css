@@ -7,7 +7,7 @@ window#waybar.hidded {
 * {
   font-family: JetBrains Mono Nerd Font;
   min-height: 14px;
-  font-size: 12px;
+  font-size: 11px;
   border: none;
   border-radius: 6px;
   padding: 0;
@@ -29,7 +29,7 @@ window#waybar.hidded {
 
 #quicklinks {
 	font-family: JetBrains Mono Nerd Font;
-	font-size: 12px;
+	font-size: 11px;
 }
 
 #cpu {
@@ -96,7 +96,7 @@ menu,
   font-weight: bold;
   font-style: normal;
   opacity: 1;
-  font-size: 16px;
+  font-size: 14px;
   color: #1e1;
   border-radius: 6px;
 }
@@ -134,7 +134,7 @@ menu,
 }
 
 #custom-launcher {
-  font-size: 18px;
+  font-size: 14px;
   transition: none;
   padding: 0px 10px;
   margin-right: 2px;
@@ -144,7 +144,7 @@ menu,
 }
 
 #custom-transparency {
-  font-size: 18px;
+  font-size: 14px;
   background: @raisin-black;
   color: #94e2d5;
   padding: 0px 14px;
@@ -154,7 +154,7 @@ menu,
 }
 
 #custom-wallpaper {
-  font-size: 20px;
+  font-size: 16px;
   font-family: 'Font Awesome 5 Free';
   padding: 0px 8px;
   margin-right: 1px;

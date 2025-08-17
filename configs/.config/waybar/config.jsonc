@@ -4,7 +4,8 @@
   "margin-right": 3,
   "margin-top": 2,
   "margin-bottom": 0,
-  "modules-left": ["hyprland/workspaces", "cpu", "memory", "disk", "network#speed"],
+  "modules-left": ["hyprland/workspaces", 
+    "cpu", "memory", "disk"],
   "modules-center": ["clock"],
   "modules-right": [
     "temperature#gpu",
@@ -19,7 +20,7 @@
     "battery"
   ],
   "temperature#gpu": {
-    "hwmon-path": ["/sys/class/hwmon/hwmon1/temp1_input","/sys/class/hwmon/hwmon2/temp1_input"],
+    "exec": "nvidia-smi --query-gpu=temperature.gpu --format=csv,noheader",
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C ",
@@ -27,7 +28,7 @@
     "tooltip-format": "GPU"
   },
   "temperature#cpu": {
-    "hwmon-path": ["/sys/class/hwmon/hwmon2/temp1_input", "/sys/class/hwmon/hwmon3/temp1_input"],
+    "hwmon-path": ["/sys/class/hwmon/hwmon6/temp1_input"],
     "critical-threshold": 80,
     "format-critical": "{temperatureC}°C ",
     "format": "{temperatureC}°C ",

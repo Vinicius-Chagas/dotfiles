@@ -26,8 +26,6 @@ hyprshot
 jdk21-openjdk
 kitty
 less
-lib32-gamemode
-lib32-mangohud
 libreoffice-still
 libreoffice-still-br
 linux
@@ -63,7 +61,6 @@ pulse-native-provider
 pyenv
 python-pip
 qbittorrent
-steam
 stow
 sudo
 thunar
