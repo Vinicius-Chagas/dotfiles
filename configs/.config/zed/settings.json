@@ -1,0 +1,66 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+  "edit_predictions": {
+    "disabled_globs": [],
+    "mode": "eager",
+    "copilot": {
+      "proxy": null,
+      "proxy_no_verify": null,
+      "enterprise_uri": null
+    },
+    "enabled_in_text_threads": false
+  },
+  "icon_theme": "Catppuccin Latte",
+  "agent": {
+    "play_sound_when_agent_done": true,
+    "single_file_review": false,
+    "default_profile": "write",
+    "default_model": {
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 16,
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Dark",
+    "dark": "One Dark"
+  },
+  "features": {
+    "edit_prediction_provider": "copilot"
+  },
+  "format_on_save": "on",
+  "diagnostics": {
+    "button": true,
+    "include_warnings": true,
+    "lsp_pull_diagnostics": {
+      "enabled": true,
+      "debounce_ms": 50
+    },
+    "cargo": null
+  },
+  "project_panel": {
+    "show_diagnostics": "all",
+    "indent_guides": {
+      "show": "always"
+    }
+  },
+  "scrollbar": {
+    "diagnostics": "information"
+  },
+  "tabs": {
+    "show_diagnostics": "all"
+  },
+  "code_actions_on_format": {
+    "source.fixAll.eslint": true
+  },
+  "formatter": "prettier"
+}
